@@ -74,6 +74,12 @@ namespace August2023.Pages
 
          
         }
+        public string GetCode(IWebDriver driver)
+        {
+            IWebElement newCode = driver.FindElement(By.XPath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[last()]/td[1]"));
+            return newCode.Text;
+
+        }
 
         public void EditTimeRecord(IWebDriver driver)
         {
@@ -137,6 +143,7 @@ namespace August2023.Pages
         {
            
             Wait.WaitToBeClickable(driver, "XPath", "//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[last()]/td[1]", 7);
+            Thread.Sleep(2000);
             
             // check the last element
 
